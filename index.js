@@ -13,7 +13,7 @@ app.use('/',(req,res,next)=>{
 
 // app.get('/user', (req, res) => {
 //   res.send({date: new Date(), message: 'Today date is'});
-// });
+// }); only check sever 
 
 
 app.delete('/user/:id',(req,res)=>{
