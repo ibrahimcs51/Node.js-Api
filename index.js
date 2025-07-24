@@ -27,14 +27,21 @@ app.delete('/user/:id',(req,res)=>{
 app.get('/user', (req, res) => {
   res.send({ users });     
 });
-app.put('/user/:id',(req,res)=>{
-    const {id}=req.params;
-    const index=users.findIndex(obj=>obj.id===id);
-    users.splice(index,1),{...req.body,id}
-res.send({id ,message:"user update successfully "})
-    // console.log(users)
-})
+app.put('/user/:id', (req, res) => {
+  const { id } = req.params;
+  const index = users.findIndex(obj => obj.id === id);
 
+  if (index === -1) {
+    return res.status(404).send({ message: "User not found" });
+  }
+
+
+  app.use
+  // Merge existing user with updated fields
+  users[index] = { ...users[index], ...req.body };
+
+  res.send({ id, message: "User updated successfully", user: users[index] });
+});
 app.listen(3000, () => {
   console.log('Server is running on port 3000');
 }); 
@@ -47,7 +54,7 @@ app.post('/user', async(req,res)=>{
          // console.log("req",req.body )
      await userSchema.validateAsync(req.body)
     users.push({...req.body,id:Date.now().toString(36)})
-    res.send({  users:req.body,message: 'update  registration successful ' });
+    res.send({  users:req.body,message: 'user  registration successful ' });
     } catch (err) {
         res. status(400).send({ error:err.details||"something is wrong",status:400,})
         
