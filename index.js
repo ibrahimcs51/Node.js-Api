@@ -36,7 +36,7 @@ app.put('/user/:id', (req, res) => {
   }
 
 
-  app.get("/")
+  // app.get("/")
   // Merge existing user with updated fields
   users[index] = { ...users[index], ...req.body };
 
