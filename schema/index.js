@@ -9,8 +9,8 @@ const userSchema=joi.object({
 })
 // app.get('/api')
 
-app.post('/api/user', (req, res) => {
-    const { error } = userSchema.validate(req.body);    
+// app.post('/api/user', (req, res) => {
+//     const { error } = userSchema.validate(req.body);    
 
 
 
