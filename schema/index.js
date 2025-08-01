@@ -7,7 +7,8 @@ const userSchema=joi.object({
 
 
 })
-app.get('/api')
+// app.get('/api')
+
 
 
 export{
