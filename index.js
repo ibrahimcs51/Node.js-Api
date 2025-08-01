@@ -35,9 +35,11 @@ app.put('/user/:id', (req, res) => {
     return res.status(404).send({ message: "User not found" });
   }
 
-
-  // app.get("/")
   // Merge existing user with updated fields
+
+  // app.use("/")
+
+  app._router("/")
   users[index] = { ...users[index], ...req.body };
 
   res.send({ id, message: "User updated successfully", user: users[index] });

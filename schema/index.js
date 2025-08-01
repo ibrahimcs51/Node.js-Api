@@ -5,7 +5,10 @@ const userSchema=joi.object({
     email:joi.string().required(),
     password:joi.string().required()
 
+
 })
+app.get('/api')
+
 
 export{
     userSchema
