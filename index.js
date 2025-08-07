@@ -37,7 +37,7 @@ app.put('/user/:id', (req, res) => {
 
  
 
-  app.use("/")
+  // app.use("/")
 
   app._router("/")
   users[index] = { ...users[index], ...req.body };
