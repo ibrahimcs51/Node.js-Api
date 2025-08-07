@@ -11,9 +11,9 @@ app.use('/',(req,res,next)=>{
     next()// Es ka payda ham auth kely use krty hain
 })
 
-app.get('/user', (req, res) => {
-  res.send({date: new Date(), message: 'Today date is'});
-}); only check sever 
+// app.get('/user', (req, res) => {
+//   res.send({date: new Date(), message: 'Today date is'});
+// }); only check sever 
 
 
 app.delete('/user/:id',(req,res)=>{
